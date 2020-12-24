@@ -9,7 +9,6 @@ require(
         modal,
         alert
     ) {
-        'use strict';
         var options = {
             type: 'popup',
             responsive: true,
