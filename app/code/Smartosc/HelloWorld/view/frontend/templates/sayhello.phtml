@@ -3,9 +3,8 @@
 /**
  * @var \Smartosc\HelloWorld\Block\Display $block
  */
-$name = md5(microtime);
-//$name = microtime(true);
-//$name = password_hash($name, PASSWORD_BCRYPT);
+$name = microtime(true);
+$name = password_hash($name, PASSWORD_BCRYPT);
 $name = preg_replace('/[^a-z0-9\-]/', '', $name);
 echo $name;
 echo $block->sayHello();
