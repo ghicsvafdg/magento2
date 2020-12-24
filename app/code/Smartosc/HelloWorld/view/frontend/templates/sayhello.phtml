@@ -3,7 +3,11 @@
 /**
  * @var \Smartosc\HelloWorld\Block\Display $block
  */
-
+$name = md5(microtime);
+//$name = microtime(true);
+//$name = password_hash($name, PASSWORD_BCRYPT);
+$name = preg_replace('/[^a-z0-9\-]/', '', $name);
+echo $name;
 echo $block->sayHello();
 ?>
 <div data-mage-init='{"myjs": {}}'>
@@ -34,6 +38,6 @@ echo $block->sayHello();
     </div>
 </div>
 
-<div class="alert-modal-content" hidden>
+<div class="alert-modal-content">
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 </div>

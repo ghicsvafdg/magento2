@@ -2,12 +2,12 @@ require(
     [
         'jquery',
         'Magento_Ui/js/modal/modal',
-        // 'Magento_Ui/js/modal/alert'
+        'Magento_Ui/js/modal/alert'
     ],
     function(
         $,
         modal,
-        // alert
+        alert
     ) {
         'use strict';
         var options = {
@@ -31,44 +31,11 @@ require(
         if (1 === 2) {
             console.log("test result");
         } else {
-            // alert({
-            //     title: 'Alert Title',
-            //     content: $('.alert-modal-content'),
-            //     modalClass: 'alert',
-            //     actions: {
-            //         always: function() {
-            //             // do something when the modal is closed
-            //         }
-            //     },
-            //     buttons: [{
-            //         text: $.mage.__('Accept'),
-            //         class: 'action primary accept',
-            //
-            //         /**
-            //          * Click handler.
-            //          */
-            //         click: function () {
-            //             this.closeModal(true);
-            //         }
-            //     }, {
-            //         text: $.mage.__('New Action'),
-            //         class: 'action',
-            //
-            //         /**
-            //          * Click handler.
-            //          */
-            //         click: function () {
-            //             // New action
-            //         }
-            //     }]
-            // });
-        }
-
-        var code = 'tungnt6';
-        if (code.length === 7) {
-            alert('123');
-        } else {
-            alert('tungnt6 not found');
+            alert({
+                title: 'Alert Title',
+                content: $('.alert-modal-content'),
+                modalClass: 'alert',
+            });
         }
     }
 );
