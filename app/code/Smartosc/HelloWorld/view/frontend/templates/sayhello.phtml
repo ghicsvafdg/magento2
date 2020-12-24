@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @var \Smartosc\HelloWorld\Block\Display $block
+ */
+
+echo $block->sayHello();
+?>
+<div>
+    <a href="#" id="init_element">Click Me</a>
+</div>
+
+
+<div id="popup-modal" hidden>
+    yes I am the modal.
+</div>
+
+<button type="button" class="action" data-trigger="trigger">
+    <span data-bind="i18n: 'Click Here'"></span>
+</button>
+<div data-bind="mageInit: {
+        'Magento_Ui/js/modal/modal':{
+            'type': 'popup',
+            'title': 'Popup title',
+            'trigger': '[data-trigger=trigger]',
+            'responsive': true,
+            'buttons': [{
+                text: jQuery.mage.__('Submit'),
+                class: 'action'
+            }]
+        }}">
+    <div class="content">
+        Popup Content
+    </div>
+</div>
