@@ -9,20 +9,60 @@ require(
         modal,
         alert
     ) {
-        alert({
-            title: $.mage.__('Some title'),
-            content: $.mage.__('Some content'),
-            actions: {
-                always: function(){}
-            },
+        'use strict';
+        var options = {
+            type: 'popup',
+            responsive: true,
+            innerScroll: true,
             buttons: [{
-                text: $.mage.__('OK'),
-                class: 'action-primary action-accept',
+                text: $.mage.__('Continue'),
+                class: 'mymodal1',
                 click: function () {
-                    this.closeModal(true);
+                    this.closeModal();
                 }
             }]
+        };
+
+        var popup = modal(options, $('#popup-modal'));
+        $("#click-me").on('click',function(){
+            $("#popup-modal").modal("openModal");
         });
+
+        if (1 == 2) {
+            console.log("test result");
+        } else {
+            alert({
+                title: 'Alert Title',
+                content: $('.alert-modal-content'),
+                modalClass: 'alert',
+                actions: {
+                    always: function() {
+                        // do something when the modal is closed
+                    }
+                },
+                buttons: [{
+                    text: $.mage.__('Accept'),
+                    class: 'action primary accept',
+
+                    /**
+                     * Click handler.
+                     */
+                    click: function () {
+                        this.closeModal(true);
+                    }
+                }, {
+                    text: $.mage.__('New Action'),
+                    class: 'action',
+
+                    /**
+                     * Click handler.
+                     */
+                    click: function () {
+                        // New action
+                    }
+                }]
+            });
+        }
     }
 );
 
